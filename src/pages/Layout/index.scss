@@ -1,0 +1,22 @@
+@use "../../styles/fonts.scss" as f;
+@use "../../styles/mixins.scss" as m;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type : none
+}
+
+body {
+  margin: 0;
+  height:100%;
+  font-weight:500;
+  font-family: f.$roboto;
+}
+
+.main-container{
+  position: fixed;
+  top:160px;
+  left: 220px;
+}
