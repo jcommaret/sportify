@@ -1,0 +1,30 @@
+@use "../../styles/fonts.scss" as f;
+@use "../../styles/colors.scss" as c;
+ 
+.header{
+  height: 91px;
+  line-height: 91px;
+  background-color: c.$black;
+  display:flex;
+  justify-content: space-between;
+  .logo{
+    margin-top:18px;
+    margin-left:29px;
+    width:178px;
+    height:61px;
+  }
+  ul{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    li{
+      width:25%;
+      text-align: center;
+    }
+    a{
+      font-size: f.$f24;
+      color:c.$white;
+      text-decoration: none;
+    }
+  }
+}

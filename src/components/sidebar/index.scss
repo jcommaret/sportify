@@ -1,0 +1,7 @@
+@use "../../styles/colors.scss" as c;
+
+.sidebar{
+  width:117px;
+  height:100vh;
+  background-color: c.$black;
+}
