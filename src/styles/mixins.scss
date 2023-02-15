@@ -1,0 +1,27 @@
+@use "breakpoints" as b;
+@use "colors" as c;
+
+
+@mixin desktop {
+    @media screen and (min-width: map-get(b.$breakpoints, desktop)){
+        @content;
+    }
+}
+
+@mixin sliderbutton{
+    content: "";
+    cursor: pointer;
+    z-index: 8000;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-top: 4px solid c.$white;
+    border-right: 4px solid c.$white;
+    .open{
+        margin-top:10px;
+    }
+    .close{
+        margin-top:20px;
+    }
+    @content;
+}
