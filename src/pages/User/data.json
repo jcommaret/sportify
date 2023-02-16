@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "user": "Thomas",
+    "yesterday": "1",
+    "totalScore": 12,
+    "activity": [
+      {
+        "serie": "1",
+        "weight": 50,
+        "calories": 80
+      },
+      {
+        "serie": "2",
+        "weight": 77,
+        "calories": 106
+      },
+      {
+        "serie": "3",
+        "weight": 63,
+        "calories": 126
+      },
+      {
+        "serie": "4",
+        "weight": 54,
+        "calories": 81
+      },
+      {
+        "serie": "5",
+        "weight": 63,
+        "calories": 76
+      },
+      {
+        "serie": "6",
+        "weight": 63,
+        "calories": 58
+      },
+      {
+        "serie": "7",
+        "weight": 47,
+        "calories": 71
+      },
+      {
+        "serie": "8",
+        "weight": 91,
+        "calories": 116
+      },
+      {
+        "serie": "9",
+        "weight": 51,
+        "calories": 91
+      },
+      {
+        "serie": "10",
+        "weight": 47,
+        "calories": 106
+      }
+    ],
+    "fuel": [
+      {
+        "ratio": 1930,
+        "type": "calories"
+      },
+      {
+        "ratio": 155,
+        "type": "Proteines"
+      },
+      {
+        "ratio": 290,
+        "type": "Glucides"
+      },
+      {
+        "ratio": 50,
+        "type": "Lipides"
+      }
+    ],
+    "sessionTime": [
+      {
+        "day": "L",
+        "time": 20
+      },
+      {
+        "day": "M",
+        "time": 10
+      },
+      {
+        "day": "M",
+        "time": 15
+      },
+      {
+        "day": "J",
+        "time": 2
+      },
+      {
+        "day": "V",
+        "time": 68
+      },
+      {
+        "day": "S",
+        "time": 68
+      },
+      {
+        "day": "D",
+        "time": 100
+      }
+    ],
+    "activityWork": [
+      {
+        "work": "Intensity",
+        "score": 2.5
+      },
+      {
+        "work": "Speed",
+        "score": 4.8
+      },
+      {
+        "work": "Force",
+        "score": 3.8
+      },
+      {
+        "work": "Endurance",
+        "score": 2.5
+      },
+      {
+        "work": "Energy",
+        "score": 4.2
+      },
+      {
+        "work": "Cardio",
+        "score": 3.5
+      }
+    ]
+  }
+]
