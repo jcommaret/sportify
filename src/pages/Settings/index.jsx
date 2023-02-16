@@ -1,3 +1,3 @@
 export default function Settings() {
-  return <p>Settings page</p>
+  return <p>Please come back Later</p>
 }

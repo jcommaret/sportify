@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "user": "Thomas",
-    "yesterday": "1",
+    "name": "Thomas",
+    "yesterday": true,
     "totalScore": 12,
     "activity": [
       {

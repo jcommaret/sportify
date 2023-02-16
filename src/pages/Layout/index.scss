@@ -1,5 +1,7 @@
 @use "../../styles/fonts.scss" as f;
 @use "../../styles/mixins.scss" as m;
+@use "../../styles/colors.scss" as c;
+
 
 * {
   box-sizing: border-box;
@@ -13,6 +15,7 @@ body {
   height:100%;
   font-weight:500;
   font-family: f.$roboto;
+  color:c.$b-font;
 }
 
 .main-container{

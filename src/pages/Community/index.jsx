@@ -1,3 +1,3 @@
 export default function Community() {
-  return <p>Community</p>
+  return <p>Please come back Later</p>
 }

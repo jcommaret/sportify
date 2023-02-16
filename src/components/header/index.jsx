@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import "./index.scss"
 
 import logo from "../../assets/logo.png"
+import navItems from "./pages"
 
 export default function Header() {
   return (
@@ -12,18 +13,11 @@ export default function Header() {
         <img className="logo" src={logo} alt="logo" />
       </Link>
       <ul>
-        <li>
-          <Link to="/">Accueil</Link>
-        </li>
-        <li>
-          <Link to="/profile">Profil</Link>
-        </li>
-        <li>
-          <Link to="/Settings">Réglages</Link>
-        </li>
-        <li>
-          <Link to="/Community">Communauté</Link>
-        </li>
+        {navItems.map((nav) => (
+          <li key={nav.id}>
+            <Link to={nav.path}>{nav.name}</Link>
+          </li>
+        ))}
       </ul>
     </header>
   )
