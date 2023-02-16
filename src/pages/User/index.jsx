@@ -19,15 +19,32 @@ export default function UserPage() {
           Bonjour <span>{name}</span>
         </p>
         {yesterday && (
-          <p class="greetings">
+          <p className="greetings">
             Félicitation ! Vous avez explosé vos objectifs hier 👏
           </p>
         )}
       </section>
 
-      <section className="activity">
-        <h2 className="title">Activité quotidienne</h2>
-      </section>
+      <div className="container">
+        <section className="activity">
+          <h2 className="title">Activité quotidienne</h2>
+          <p>Bar charts</p>
+        </section>
+      </div>
+
+      <div className="container">
+        <section className="sessions">
+          <p>Line charts</p>
+        </section>
+
+        <section className="activity-work">
+          <p>Radar</p>
+        </section>
+
+        <section className="score">
+          <p>Radial Bar charts</p>
+        </section>
+      </div>
     </>
   )
 }

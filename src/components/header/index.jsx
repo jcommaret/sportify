@@ -13,8 +13,8 @@ export default function Header() {
         <img className="logo" src={logo} alt="logo" />
       </Link>
       <ul>
-        {navItems.map((nav) => (
-          <li key={nav.id}>
+        {navItems.map((nav, index) => (
+          <li key={index}>
             <Link to={nav.path}>{nav.name}</Link>
           </li>
         ))}
