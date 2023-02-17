@@ -1,7 +1,17 @@
 @use "../../styles/colors.scss" as c;
 
 .sidebar{
-  width:117px;
-  height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: c.$black;
+  width: 117px;
+  ul{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    gap:20px;
+    height:100vh;
+    margin-top: 275px;
+  }
 }

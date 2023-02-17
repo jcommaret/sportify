@@ -1,9 +1,22 @@
+import React from "react"
+import { Link } from "react-router-dom"
+
+import sidebarItems from "./pages"
+
 import "./index.scss"
 
 export default function Sidebar() {
   return (
     <aside className="sidebar">
-      <ul></ul>
+      <ul>
+        {sidebarItems.map((icon, index) => (
+          <li key={index}>
+            <Link to={icon.path}>
+              <img src={icon.img} alt={icon.desc} />
+            </Link>
+          </li>
+        ))}
+      </ul>
     </aside>
   )
 }
