@@ -2,7 +2,6 @@
 @use "../../styles/mixins.scss" as m;
 @use "../../styles/colors.scss" as c;
 
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +18,7 @@ body {
 }
 
 .main-container{
-  position: fixed;
+  position: absolute;
   top:160px;
-  left: 220px;
+  left:15%;
 }
