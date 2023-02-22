@@ -2,14 +2,17 @@ import "./index.scss"
 import React from "react"
 import { useParams } from "react-router-dom"
 
-import users from "../../data/user.json"
-
 import BarChartWithUserData from "../../components/barchart"
+
+import users from "../../data/user.json"
+import dataBarChart from "../../data/dataBarChart.json"
 
 export default function UserPage() {
   const id = useParams().id
   const userList = users
   const user = userList[id]
+  const dataForBarChart = dataBarChart
+
   // Datas
   const name = user.name
   const yesterday = user.yesterday
@@ -29,13 +32,14 @@ export default function UserPage() {
 
       <div className="container">
         <section className="activity">
-          <h2 className="title">Activité quotidienne</h2>
-          <BarChartWithUserData></BarChartWithUserData>
+          <h2 className="activity-title">Activité quotidienne</h2>
+          <BarChartWithUserData data={dataForBarChart}></BarChartWithUserData>
         </section>
       </div>
 
       <div className="container">
         <section className="sessions">
+          <h2 className="sessions-title">Sessions</h2>
           <p>Line charts</p>
         </section>
 
