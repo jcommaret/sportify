@@ -4,7 +4,6 @@
     "name": "Thomas",
     "yesterday": true,
     "totalScore": 12,
-
     "fuel": [
       {
         "ratio": 1930,
@@ -21,36 +20,6 @@
       {
         "ratio": 50,
         "type": "Lipides"
-      }
-    ],
-    "sessionTime": [
-      {
-        "day": "L",
-        "time": 20
-      },
-      {
-        "day": "M",
-        "time": 10
-      },
-      {
-        "day": "M",
-        "time": 15
-      },
-      {
-        "day": "J",
-        "time": 2
-      },
-      {
-        "day": "V",
-        "time": 68
-      },
-      {
-        "day": "S",
-        "time": 68
-      },
-      {
-        "day": "D",
-        "time": 100
       }
     ],
     "activityWork": [

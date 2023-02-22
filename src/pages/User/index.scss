@@ -35,15 +35,34 @@
 
 .sessions{
   background-color: #FF0101;
-  min-width:200px;
+  width:250px;
   height:240px;
   border-radius: 5px;
+  &-title{
+    margin-left: 24px;
+    margin-top: 24px;
+    color: #FFF;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom:24px;
+    width: 140px;;
+  }
+  .recharts-wrapper{
+    margin-left: -65px;
+  }
 }
 
 .activity-work{
+  border-radius: 5px;
   min-width: 200px;
   height:240px;
-  background-color: aqua;
+  background-color: #282D30;
+  ;
 }
 
 .score{

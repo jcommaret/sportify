@@ -2,17 +2,25 @@ import "./index.scss"
 import React from "react"
 import { useParams } from "react-router-dom"
 
-import BarChartWithUserData from "../../components/barchart"
 
 import users from "../../data/user.json"
+
+import BarChartWithUserData from "../../components/barchart"
 import dataBarChart from "../../data/dataBarChart.json"
+
+import LineChartWithUserData from "../../components/linechart"
+import dataLineChart from "../../data/sessionTime.json"
+
+import RadarChartWithData from "../../components/radarchart"
+import dataRadarChart from "../../data/activityWork.json"
 
 export default function UserPage() {
   const id = useParams().id
   const userList = users
   const user = userList[id]
-  const dataForBarChart = dataBarChart
-
+  const dataFBarChart = dataBarChart
+  const dataFLineChart = dataLineChart
+  const dataFRadarChart = dataRadarChart
   // Datas
   const name = user.name
   const yesterday = user.yesterday
@@ -33,18 +41,18 @@ export default function UserPage() {
       <div className="container">
         <section className="activity">
           <h2 className="activity-title">Activité quotidienne</h2>
-          <BarChartWithUserData data={dataForBarChart}></BarChartWithUserData>
+          <BarChartWithUserData data={dataFBarChart}></BarChartWithUserData>
         </section>
       </div>
 
       <div className="container">
         <section className="sessions">
-          <h2 className="sessions-title">Sessions</h2>
-          <p>Line charts</p>
+          <h2 className="sessions-title">Durée moyenne des sessions</h2>
+          <LineChartWithUserData data={dataFLineChart}></LineChartWithUserData>
         </section>
 
         <section className="activity-work">
-          <p>Radar</p>
+          <RadarChartWithData data={dataFRadarChart}></RadarChartWithData>
         </section>
 
         <section className="score">
