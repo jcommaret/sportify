@@ -13,7 +13,12 @@ export default function BarChartWithUserData({ data }) {
   return (
     <ResponsiveContainer width="100%" height={200}>
       <BarChart width={760} height={200} data={data}>
-        <Legend layout="horizontal" verticalAlign="top" align="center" />
+        <Legend
+          layout="horizontal"
+          verticalAlign="top"
+          align="center"
+          wrapperStyle={{ top: -45 }}
+        />
         <CartesianGrid strokeDasharray="1" vertical={false} />
         <XAxis dataKey="serie" />
         <Tooltip dataKey="serie" />

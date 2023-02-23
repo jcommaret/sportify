@@ -14,6 +14,9 @@ import dataLineChart from "../../data/sessionTime.json"
 import RadarChartWithData from "../../components/radarchart"
 import dataRadarChart from "../../data/activityWork.json"
 
+import RadialBarChartWithData from "../../components/radialbarchart"
+import totalScore from "../../data/totalScore.json"
+
 export default function UserPage() {
   const id = useParams().id
   const userList = users
@@ -56,7 +59,7 @@ export default function UserPage() {
         </section>
 
         <section className="score">
-          <p>Radial Bar charts</p>
+          <RadialBarChartWithData data={totalScore}></RadialBarChartWithData>
         </section>
       </div>
     </>
