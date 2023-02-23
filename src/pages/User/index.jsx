@@ -24,10 +24,11 @@ export default function UserPage() {
   const dataFBarChart = dataBarChart
   const dataFLineChart = dataLineChart
   const dataFRadarChart = dataRadarChart
+  const totalScoreData = totalScore
   // Datas
+  const value = totalScoreData[0].value
   const name = user.name
   const yesterday = user.yesterday
-
   return (
     <>
       <section className="welcome">
@@ -59,7 +60,11 @@ export default function UserPage() {
         </section>
 
         <section className="score">
-          <RadialBarChartWithData data={totalScore}></RadialBarChartWithData>
+          <h2 className="score-title">Score</h2>
+          <RadialBarChartWithData
+            data={totalScore}
+            valeur={value}
+          ></RadialBarChartWithData>
         </section>
       </div>
     </>

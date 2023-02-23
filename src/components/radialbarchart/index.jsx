@@ -1,27 +1,43 @@
 import React from "react"
-import { RadialBarChart, RadialBar, Legend } from "recharts"
+import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts"
 
-export default function RadialBarChartWithData({ data }) {
+export default function RadialBarChartWithData({ data, valeur }) {
+  const circleSize = 250
   return (
     <RadialBarChart
-      width={250}
-      height={250}
-      cx={125}
-      cy={125}
+      width={circleSize}
+      height={circleSize}
+      cx={circleSize / 2}
+      cy={circleSize / 2}
       innerRadius={100}
       outerRadius={120}
-      barSize={5}
+      barSize={10}
       data={data}
-      startAngle={0}
-      endAngle={360}
+      startAngle={90}
+      endAngle={-270}
     >
-      <RadialBar
-        startAngle={0}
-        endAngle={300}
-        dataKey="uv"
-        background={{ fill: "#eee" }}
-        fill={"#"}
+      <PolarAngleAxis
+        type="number"
+        domain={[0, 100]}
+        angleAxisId={0}
+        tick={false}
       />
+      <RadialBar
+        background
+        clockWise
+        dataKey="value"
+        cornerRadius={circleSize / 2}
+        fill="#FF0101"
+      />
+      <text
+        x={circleSize / 2}
+        y={circleSize / 2}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        className="progress-label"
+      >
+        {valeur} %
+      </text>
     </RadialBarChart>
   )
 }
