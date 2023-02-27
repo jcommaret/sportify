@@ -2,28 +2,29 @@ import "./index.scss"
 import React from "react"
 import { useParams } from "react-router-dom"
 
-
 import users from "../../data/user.json"
 
-import BarChartWithUserData from "../../components/barchart"
-import dataBarChart from "../../data/dataBarChart.json"
+import DailyActivity from "../../components/DailyActivity"
+import dataDailyActivity from "../../data/DailyActivity.json"
 
-import LineChartWithUserData from "../../components/linechart"
-import dataLineChart from "../../data/sessionTime.json"
+import SessionsAvg from "../../components/SessionsAvg"
+import dataSessionTime from "../../data/SessionTime.json"
 
-import RadarChartWithData from "../../components/radarchart"
-import dataRadarChart from "../../data/activityWork.json"
+import ActivityWork from "../../components/ActivityWork"
+import dataActivity from "../../data/ActivityWork.json"
 
-import RadialBarChartWithData from "../../components/radialbarchart"
+import TotalScore from "../../components/TotalScore"
 import totalScore from "../../data/totalScore.json"
 
 export default function UserPage() {
   const id = useParams().id
   const userList = users
   const user = userList[id]
-  const dataFBarChart = dataBarChart
-  const dataFLineChart = dataLineChart
-  const dataFRadarChart = dataRadarChart
+
+  const DailyActivityData = dataDailyActivity
+  const SessionAvgData = dataSessionTime
+
+  const Activity = dataActivity
   const totalScoreData = totalScore
   // Datas
   const value = totalScoreData[0].value
@@ -45,26 +46,23 @@ export default function UserPage() {
       <div className="container">
         <section className="activity">
           <h2 className="activity-title">Activité quotidienne</h2>
-          <BarChartWithUserData data={dataFBarChart}></BarChartWithUserData>
+          <DailyActivity data={DailyActivityData}></DailyActivity>
         </section>
       </div>
 
       <div className="container">
         <section className="sessions">
           <h2 className="sessions-title">Durée moyenne des sessions</h2>
-          <LineChartWithUserData data={dataFLineChart}></LineChartWithUserData>
+          <SessionsAvg data={SessionAvgData}></SessionsAvg>
         </section>
 
         <section className="activity-work">
-          <RadarChartWithData data={dataFRadarChart}></RadarChartWithData>
+          <ActivityWork data={Activity}></ActivityWork>
         </section>
 
         <section className="score">
           <h2 className="score-title">Score</h2>
-          <RadialBarChartWithData
-            data={totalScore}
-            valeur={value}
-          ></RadialBarChartWithData>
+          <TotalScore data={totalScore} valeur={value}></TotalScore>
         </section>
       </div>
     </>

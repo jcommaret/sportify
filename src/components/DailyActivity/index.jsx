@@ -9,7 +9,7 @@ import {
   CartesianGrid,
 } from "recharts"
 
-export default function BarChartWithUserData({ data }) {
+export default function DailyActivity({ data }) {
   return (
     <ResponsiveContainer width="100%" height={200}>
       <BarChart width={760} height={200} data={data}>

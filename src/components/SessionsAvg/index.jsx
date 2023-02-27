@@ -1,6 +1,6 @@
 import { LineChart, Line, YAxis, XAxis, Tooltip } from "recharts"
 
-export default function LineChartWithUserData({ data }) {
+export default function SessionsAvg({ data }) {
   return (
     <LineChart width={320} height={140} data={data}>
       <XAxis dataKey="day" stroke="#FFFFFF" />

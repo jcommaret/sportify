@@ -1,7 +1,7 @@
 import React from "react"
 import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts"
 
-export default function RadialBarChartWithData({ data, valeur }) {
+export default function TotalScore({ data, valeur }) {
   const circleSize = 250
   return (
     <RadialBarChart
@@ -36,7 +36,7 @@ export default function RadialBarChartWithData({ data, valeur }) {
         dominantBaseline="middle"
         className="progress-label"
       >
-        {valeur} %
+        {valeur} % de votre objectif
       </text>
     </RadialBarChart>
   )
