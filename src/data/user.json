@@ -2,24 +2,6 @@
   {
     "id": 1,
     "name": "Thomas",
-    "yesterday": true,
-    "fuel": [
-      {
-        "ratio": 1930,
-        "type": "calories"
-      },
-      {
-        "ratio": 155,
-        "type": "Proteines"
-      },
-      {
-        "ratio": 290,
-        "type": "Glucides"
-      },
-      {
-        "ratio": 50,
-        "type": "Lipides"
-      }
-    ]
+    "yesterday": true
   }
 ]

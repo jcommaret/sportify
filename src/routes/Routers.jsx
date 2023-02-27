@@ -7,7 +7,7 @@ import Community from "../pages/Community"
 import NotFound from "../pages/NotFound"
 import Homepage from "../pages/Homepage"
 
-export default function App() {
+export default function Routers() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

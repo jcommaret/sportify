@@ -75,6 +75,7 @@ export default function UserPage() {
           {fuel.map((item, index) => {
             return (
               <div className="fuel-item" key={index}>
+                <img src={item.img} alt={item.type} />
                 <p>{item.ratio}</p>
                 <p>{item.type}</p>
               </div>

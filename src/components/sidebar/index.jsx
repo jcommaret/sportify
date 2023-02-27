@@ -17,7 +17,7 @@ export default function Sidebar() {
           </li>
         ))}
       </ul>
-      <p class="footer">Copyright, SportSee 2020</p>
+      <p className="footer">Copyright, SportSee 2020</p>
     </aside>
   )
 }

@@ -1,18 +1,23 @@
 [
   {
     "ratio": 1930,
-    "type": "calories"
+    "type": "calories",
+    "img": "./assets/icon/calories-icon.png"
   },
   {
     "ratio": 155,
-    "type": "Proteines"
+    "type": "Proteines",
+    "img": "./assets/icon/fat-icon.png"
   },
   {
     "ratio": 290,
-    "type": "Glucides"
+    "type": "Glucides",
+    "img": "./assets/icon/calories.png"
   },
   {
     "ratio": 50,
-    "type": "Lipides"
+    "type": "Lipides",
+    "img": "./assets/icon/fat-icon.png"
   }
 ]
+
