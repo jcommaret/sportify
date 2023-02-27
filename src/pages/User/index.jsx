@@ -16,6 +16,8 @@ import dataActivity from "../../data/ActivityWork.json"
 import TotalScore from "../../components/TotalScore"
 import totalScore from "../../data/totalScore.json"
 
+import fuel from "../../data/fuel.json"
+
 export default function UserPage() {
   const id = useParams().id
   const userList = users
@@ -32,37 +34,52 @@ export default function UserPage() {
   const yesterday = user.yesterday
   return (
     <>
-      <section className="welcome">
-        <p className="hello">
-          Bonjour <span>{name}</span>
-        </p>
-        {yesterday && (
-          <p className="greetings">
-            Félicitation ! Vous avez explosé vos objectifs hier 👏
+      <div className="left">
+        <section className="welcome">
+          <p className="hello">
+            Bonjour <span>{name}</span>
           </p>
-        )}
-      </section>
-
-      <div className="container">
-        <section className="activity">
-          <h2 className="activity-title">Activité quotidienne</h2>
-          <DailyActivity data={DailyActivityData}></DailyActivity>
+          {yesterday && (
+            <p className="greetings">
+              Félicitation ! Vous avez explosé vos objectifs hier 👏
+            </p>
+          )}
         </section>
+
+        <div className="container">
+          <section className="activity">
+            <h2 className="activity-title">Activité quotidienne</h2>
+            <DailyActivity data={DailyActivityData}></DailyActivity>
+          </section>
+        </div>
+
+        <div className="container">
+          <section className="sessions">
+            <h2 className="sessions-title">Durée moyenne des sessions</h2>
+            <SessionsAvg data={SessionAvgData}></SessionsAvg>
+          </section>
+
+          <section className="activity-work">
+            <ActivityWork data={Activity}></ActivityWork>
+          </section>
+
+          <section className="score">
+            <h2 className="score-title">Score</h2>
+            <TotalScore data={totalScore} valeur={value}></TotalScore>
+          </section>
+        </div>
       </div>
 
-      <div className="container">
-        <section className="sessions">
-          <h2 className="sessions-title">Durée moyenne des sessions</h2>
-          <SessionsAvg data={SessionAvgData}></SessionsAvg>
-        </section>
-
-        <section className="activity-work">
-          <ActivityWork data={Activity}></ActivityWork>
-        </section>
-
-        <section className="score">
-          <h2 className="score-title">Score</h2>
-          <TotalScore data={totalScore} valeur={value}></TotalScore>
+      <div className="right">
+        <section className="fuel">
+          {fuel.map((item, index) => {
+            return (
+              <div className="fuel-item" key={index}>
+                <p>{item.ratio}</p>
+                <p>{item.type}</p>
+              </div>
+            )
+          })}
         </section>
       </div>
     </>
