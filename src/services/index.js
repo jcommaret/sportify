@@ -8,21 +8,3 @@ export function getData(id, url) {
     return fetch(`${API_URL}/${id}`).then((res) => res.json())
   }
 }
-
-/// user/:id
-// Infos utilisateur
-
-// user/:id
-// l’objectif de la journée
-
-// user/:id/activity
-// DailyWork
-
-// /user/:id/activity
-// Proteines / Glucides / Lipides / Calories
-
-// user/:id/average-sessions
-// Infos sessions
-
-// /user/:id/performance
-// Infos Activity

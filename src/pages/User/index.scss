@@ -85,3 +85,30 @@
     margin-top:-40px;
   }
 }
+
+.fuel{
+  display: flex;
+  flex-direction: column;
+  gap:33px;
+  margin-top:200px;
+  margin-left:20px;
+  &-item{
+    border-radius: 5px;
+    background-color: #FBFBFB;
+    width:258px;
+    height:124px;
+    padding:31px;
+    display: flex;
+    &-info{
+      padding: 10px;
+      p:first-of-type{
+        font-weight: 700;
+      }
+    }
+
+    img{
+    width:60px;
+    height:60px;
+  }
+}
+}

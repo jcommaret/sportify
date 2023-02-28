@@ -1,5 +1,6 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts"
 
+
 export default function ActivityWork({ data }) {
   return (
     <RadarChart

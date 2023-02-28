@@ -2,7 +2,7 @@ import "./index.scss"
 import React from "react"
 import { useParams } from "react-router-dom"
 
-import users from "../../data/user.json"
+import { getUser } from "../../services/services"
 
 import DailyActivity from "../../components/DailyActivity"
 import dataDailyActivity from "../../data/DailyActivity.json"
@@ -16,12 +16,18 @@ import dataActivity from "../../data/ActivityWork.json"
 import TotalScore from "../../components/TotalScore"
 import totalScore from "../../data/totalScore.json"
 
-import fuel from "../../data/fuel.json"
+import foodItems from "../../components/Fuel/fuel.js"
 
 export default function UserPage() {
-  const id = useParams().id
-  const userList = users
-  const user = userList[id]
+  const { id } = useParams()
+  const user = getUser(id)
+
+  Promise.resolve(
+    getUser(id).then((user) => {
+      const firstName = user.firstName
+      return firstName
+    })
+  )
 
   const DailyActivityData = dataDailyActivity
   const SessionAvgData = dataSessionTime
@@ -30,14 +36,14 @@ export default function UserPage() {
   const totalScoreData = totalScore
   // Datas
   const value = totalScoreData[0].value
-  const name = user.name
+
   const yesterday = user.yesterday
   return (
     <>
       <div className="left">
         <section className="welcome">
           <p className="hello">
-            Bonjour <span>{name}</span>
+            Bonjour <span>{firstName}</span>
           </p>
           {yesterday && (
             <p className="greetings">
@@ -72,12 +78,14 @@ export default function UserPage() {
 
       <div className="right">
         <section className="fuel">
-          {fuel.map((item, index) => {
+          {foodItems.map((item, index) => {
             return (
               <div className="fuel-item" key={index}>
                 <img src={item.img} alt={item.type} />
-                <p>{item.ratio}</p>
-                <p>{item.type}</p>
+                <div className="fuel-item-info">
+                  <p>{item.ratio}</p>
+                  <p>{item.type}</p>
+                </div>
               </div>
             )
           })}
