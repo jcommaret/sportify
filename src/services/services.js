@@ -24,7 +24,7 @@ export function getActivity(id) {
 
 export function getPerformance(id) {
   return getData(id, "performance").then(function (data) {
-    const userPerformance = data.data
+    const userPerformance = data.data.data
     // console.log("performance :", userPerformance)
     return userPerformance
   })

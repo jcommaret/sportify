@@ -10,9 +10,7 @@ import SessionsAvg from "../../components/SessionsAvg"
 import ActivityWork from "../../components/ActivityWork"
 import TotalScore from "../../components/TotalScore"
 
-import dataActivity from "../../data/ActivityWork.json"
 import totalScore from "../../data/totalScore.json"
-import dataSessionTime from "../../data/SessionTime.json"
 
 import foodItems from "../../components/Fuel/fuel.js"
 
@@ -24,6 +22,8 @@ export default function UserPage() {
   const [sessions, setSessions] = useState([])
   const [performance, setPerformance] = useState([])
 
+  console.log(performance)
+
   useEffect(() => {
     getUser(id).then((user) => setFirstName(user.firstName))
     getActivity(id).then((activity) => setActivity(activity))
@@ -31,14 +31,8 @@ export default function UserPage() {
     getPerformance(id).then((performance) => setPerformance(performance))
   }, [id])
 
-  console.log(sessions)
-  console.log(performance)
-
-  const SessionAvgData = dataSessionTime
-
-  const activityData = dataActivity
   const totalScoreData = totalScore
-  // Datas
+
   const value = totalScoreData[0].value
 
   return (
@@ -68,7 +62,7 @@ export default function UserPage() {
           </section>
 
           <section className="activity-work">
-            <ActivityWork data={activityData}></ActivityWork>
+            <ActivityWork data={performance}></ActivityWork>
           </section>
 
           <section className="score">

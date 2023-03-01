@@ -1,6 +1,5 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts"
 
-
 export default function ActivityWork({ data }) {
   return (
     <RadarChart
@@ -12,10 +11,10 @@ export default function ActivityWork({ data }) {
       data={data}
     >
       <PolarGrid />
-      <PolarAngleAxis dataKey="work" stroke="#FFFFFF" />
+      <PolarAngleAxis dataKey="kind" stroke="#FFFFFF" />
       <Radar
         name="Mike"
-        dataKey="score"
+        dataKey="value"
         stroke="#FF0101"
         fill="#FF0101"
         fillOpacity={0.7}
