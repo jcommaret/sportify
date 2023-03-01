@@ -20,11 +20,11 @@ export default function DailyActivity({ data }) {
           wrapperStyle={{ top: -45 }}
         />
         <CartesianGrid strokeDasharray="1" vertical={false} />
-        <XAxis dataKey="serie" />
-        <Tooltip dataKey="serie" />
+        <Tooltip dataKey="calories" />
         <Bar barSize={7} dataKey="calories" fill="#282D30" />
-        <Bar barSize={7} dataKey="weight" fill="#E60000" />
-        <YAxis dataKey="weight" orientation="right" />
+        <Bar barSize={7} dataKey="kilogram" fill="#E60000" />
+        <XAxis dataKey="day" />
+        <YAxis dataKey="kilogram" orientation="right" />
       </BarChart>
     </ResponsiveContainer>
   )

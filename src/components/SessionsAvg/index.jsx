@@ -5,10 +5,10 @@ export default function SessionsAvg({ data }) {
     <LineChart width={320} height={140} data={data}>
       <XAxis dataKey="day" stroke="#FFFFFF" />
       <YAxis axisLine={false} tick={false} />
-      <Tooltip dataKey="time" />
+      <Tooltip dataKey="day" />
       <Line
         type="monotone"
-        dataKey="time"
+        dataKey="sessionLength"
         stroke="#FFFFFF"
         activeDot={{ r: 8 }}
       />

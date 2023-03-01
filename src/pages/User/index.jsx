@@ -1,40 +1,42 @@
 import "./index.scss"
-import React from "react"
+import React, { useState } from "react"
 import { useParams } from "react-router-dom"
-
+import { useEffect } from "react"
 import { getActivity, getPerformance, getUser } from "../../services/services"
 import { getSessions } from "../../services/services"
 
 import DailyActivity from "../../components/DailyActivity"
-import dataDailyActivity from "../../data/DailyActivity.json"
-
 import SessionsAvg from "../../components/SessionsAvg"
-import dataSessionTime from "../../data/SessionTime.json"
-
 import ActivityWork from "../../components/ActivityWork"
-import dataActivity from "../../data/ActivityWork.json"
-
 import TotalScore from "../../components/TotalScore"
+
+import dataActivity from "../../data/ActivityWork.json"
 import totalScore from "../../data/totalScore.json"
+import dataSessionTime from "../../data/SessionTime.json"
 
 import foodItems from "../../components/Fuel/fuel.js"
 
 export default function UserPage() {
   const { id } = useParams()
-  const { user } = getUser(id)
-  const { sessions } = getSessions(id)
-  const { activity } = getActivity(id)
-  const { performance } = getPerformance(id)
 
-  console.log(user)
-  console.log(activity)
+  const [firstName, setFirstName] = useState("")
+  const [activity, setActivity] = useState([])
+  const [sessions, setSessions] = useState([])
+  const [performance, setPerformance] = useState([])
+
+  useEffect(() => {
+    getUser(id).then((user) => setFirstName(user.firstName))
+    getActivity(id).then((activity) => setActivity(activity))
+    getSessions(id).then((sessions) => setSessions(sessions))
+    getPerformance(id).then((performance) => setPerformance(performance))
+  }, [id])
+
   console.log(sessions)
   console.log(performance)
 
-  const DailyActivityData = dataDailyActivity
   const SessionAvgData = dataSessionTime
 
-  const activ = dataActivity
+  const activityData = dataActivity
   const totalScoreData = totalScore
   // Datas
   const value = totalScoreData[0].value
@@ -44,7 +46,7 @@ export default function UserPage() {
       <div className="left">
         <section className="welcome">
           <p className="hello">
-            Bonjour <span>Prénom</span>
+            Bonjour <span>{firstName}</span>
           </p>
 
           <p className="greetings">
@@ -55,18 +57,18 @@ export default function UserPage() {
         <div className="container">
           <section className="activity">
             <h2 className="activity-title">Activité quotidienne</h2>
-            <DailyActivity data={DailyActivityData}></DailyActivity>
+            <DailyActivity data={activity}></DailyActivity>
           </section>
         </div>
 
         <div className="container">
           <section className="sessions">
             <h2 className="sessions-title">Durée moyenne des sessions</h2>
-            <SessionsAvg data={SessionAvgData}></SessionsAvg>
+            <SessionsAvg data={sessions}></SessionsAvg>
           </section>
 
           <section className="activity-work">
-            <ActivityWork data={activ}></ActivityWork>
+            <ActivityWork data={activityData}></ActivityWork>
           </section>
 
           <section className="score">
