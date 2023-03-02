@@ -30,4 +30,11 @@ export function getPerformance(id) {
   })
 }
 
+export function getObjectifs(id) {
+  return getData(id).then(function (data) {
+    const userInfos = data.data.score
+    return userInfos
+  })
+}
+
 

@@ -2,14 +2,19 @@ import "./index.scss"
 import React, { useState } from "react"
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
-import { getActivity, getPerformance, getUser } from "../../services/services"
+import {
+  getActivity,
+  getObjectifs,
+  getPerformance,
+  getUser,
+} from "../../services/services"
 import { getSessions } from "../../services/services"
 
 import DailyActivity from "../../components/DailyActivity"
 import SessionsAvg from "../../components/SessionsAvg"
 import ActivityWork from "../../components/ActivityWork"
-import TotalScore from "../../components/TotalScore"
 
+import TotalScore from "../../components/TotalScore"
 import totalScore from "../../data/totalScore.json"
 
 import foodItems from "../../components/Fuel/fuel.js"
@@ -21,18 +26,17 @@ export default function UserPage() {
   const [activity, setActivity] = useState([])
   const [sessions, setSessions] = useState([])
   const [performance, setPerformance] = useState([])
-
-  console.log(performance)
+  const [objectif, setObjectif] = useState()
 
   useEffect(() => {
     getUser(id).then((user) => setFirstName(user.firstName))
     getActivity(id).then((activity) => setActivity(activity))
     getSessions(id).then((sessions) => setSessions(sessions))
     getPerformance(id).then((performance) => setPerformance(performance))
+    getObjectifs(id).then((objectif) => setObjectif(objectif))
   }, [id])
 
   const totalScoreData = totalScore
-
   const value = totalScoreData[0].value
 
   return (
@@ -67,7 +71,7 @@ export default function UserPage() {
 
           <section className="score">
             <h2 className="score-title">Score</h2>
-            <TotalScore data={totalScore} valeur={value}></TotalScore>
+            <TotalScore data={objectif} valeur={value}></TotalScore>
           </section>
         </div>
       </div>
