@@ -17,7 +17,6 @@ export function getSessions(id) {
 export function getActivity(id) {
   return getData(id, "activity").then(function (data) {
     const userActivity = data.data.sessions
-    //console.log("activity :", userActivity)
     return userActivity
   })
 }
@@ -25,7 +24,6 @@ export function getActivity(id) {
 export function getPerformance(id) {
   return getData(id, "performance").then(function (data) {
     const userPerformance = data.data.data
-    // console.log("performance :", userPerformance)
     return userPerformance
   })
 }
@@ -37,4 +35,10 @@ export function getObjectifs(id) {
   })
 }
 
-
+export function getKeyFigures(id) {
+  return getData(id).then(function (data) {
+    const userKeyFigures = data.data.keyData
+    console.log("KeyFig :", userKeyFigures)
+    return userKeyFigures
+  })
+}

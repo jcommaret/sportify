@@ -25,7 +25,7 @@ export default function TotalScore({ data, valeur }) {
       <RadialBar
         background
         clockWise
-        dataKey="value"
+        dataKey={100}
         cornerRadius={circleSize / 2}
         fill="#FF0101"
       />
@@ -36,7 +36,7 @@ export default function TotalScore({ data, valeur }) {
         dominantBaseline="middle"
         className="progress-label"
       >
-        {valeur} % de votre objectif
+        {valeur * 100} % de votre objectif
       </text>
     </RadialBarChart>
   )
