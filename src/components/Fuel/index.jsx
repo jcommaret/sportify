@@ -2,9 +2,9 @@ import calories from "../../assets/icon/calories-icon.png"
 import proteines from "../../assets/icon/protein-icon.png"
 import glucides from "../../assets/icon/carbs-icon.png"
 import lipides from "../../assets/icon/fat-icon.png"
-
+ 
 export default function Fuel({ data }) {
-  const foodItems = [
+  const foodType = [
     { ratio: data.calorieCount, type: "Calories", img: calories },
     { ratio: data.proteinCount, type: "Proteines", img: proteines },
     { ratio: data.carbohydrateCount, type: "Glucides", img: glucides },
@@ -12,7 +12,7 @@ export default function Fuel({ data }) {
   ]
   return (
     <div className="fuel">
-      {foodItems.map((item, index) => {
+      {foodType.map((item, index) => {
         return (
           <div className="fuel-item" key={index}>
             <img src={item.img} alt={item.type} />

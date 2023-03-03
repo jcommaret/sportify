@@ -36,8 +36,6 @@ export default function UserPage() {
     getKeyFigures(id).then((keyFigures) => setKeyFigures(keyFigures))
   }, [id])
 
-  console.log(keyFigures)
-
   return (
     <>
       <div className="left">
@@ -70,7 +68,7 @@ export default function UserPage() {
 
           <section className="score">
             <h2 className="score-title">Score</h2>
-            <TotalScore valeur={valeur}></TotalScore>
+            <TotalScore data={valeur}></TotalScore>
           </section>
         </div>
       </div>
