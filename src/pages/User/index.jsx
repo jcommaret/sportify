@@ -24,7 +24,7 @@ export default function UserPage() {
   const [activity, setActivity] = useState([])
   const [sessions, setSessions] = useState([])
   const [performance, setPerformance] = useState([])
-  const [valeur, setValeur] = useState("")
+  const [score, setScore] = useState("")
   const [keyFigures, setKeyFigures] = useState([])
 
   useEffect(() => {
@@ -32,11 +32,9 @@ export default function UserPage() {
     getActivity(id).then((activity) => setActivity(activity))
     getSessions(id).then((sessions) => setSessions(sessions))
     getPerformance(id).then((performance) => setPerformance(performance))
-    getObjectifs(id).then((valeur) => setValeur(valeur))
+    getObjectifs(id).then((score) => setScore(score))
     getKeyFigures(id).then((keyFigures) => setKeyFigures(keyFigures))
   }, [id])
-
-  console.log(keyFigures)
 
   return (
     <>
@@ -70,7 +68,7 @@ export default function UserPage() {
 
           <section className="score">
             <h2 className="score-title">Score</h2>
-            <TotalScore valeur={valeur}></TotalScore>
+            <TotalScore data={score}></TotalScore>
           </section>
         </div>
       </div>
