@@ -30,15 +30,15 @@ export function getPerformance(id) {
 
 export function getObjectifs(id) {
   return getData(id).then(function (data) {
-    const userInfos = data.data.score
-    return userInfos
+    const userObjectifs = data.data
+    console.log("UserObjectifs :", userObjectifs)
+    return userObjectifs
   })
 }
 
 export function getKeyFigures(id) {
   return getData(id).then(function (data) {
     const userKeyFigures = data.data.keyData
-    console.log("KeyFig :", userKeyFigures)
     return userKeyFigures
   })
 }
