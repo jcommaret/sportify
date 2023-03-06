@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import "./index.scss"
 
-import logo from "../../assets/logo.png"
+import logo from "../../../assets/logo.png"
 import navItems from "./pages"
 
 export default function Header() {

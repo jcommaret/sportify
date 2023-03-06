@@ -1,6 +1,6 @@
 import "./index.scss"
 import React, { useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useEffect } from "react"
 import {
   getActivity,
@@ -11,16 +11,14 @@ import {
 } from "../../services/services"
 import { getSessions } from "../../services/services"
 
-import DailyActivity from "../../components/DailyActivity"
-import SessionsAvg from "../../components/SessionsAvg"
-import ActivityWork from "../../components/ActivityWork"
-import TotalScore from "../../components/TotalScore"
-import Fuel from "../../components/Fuel"
+import DailyActivity from "../../components/Graphiques/DailyActivity"
+import SessionsAvg from "../../components/Graphiques/SessionsAvg"
+import ActivityWork from "../../components/Graphiques/ActivityWork"
+import TotalScore from "../../components/Graphiques/TotalScore"
+import Fuel from "../../components/Graphiques/Fuel"
 
 export default function UserPage() {
   const { id } = useParams()
-  const navigate = useNavigate()
-
   const [firstName, setFirstName] = useState("")
   const [activity, setActivity] = useState([])
   const [sessions, setSessions] = useState([])

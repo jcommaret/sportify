@@ -1,7 +1,7 @@
-import calories from "../../assets/icon/calories-icon.png"
-import proteines from "../../assets/icon/protein-icon.png"
-import glucides from "../../assets/icon/carbs-icon.png"
-import lipides from "../../assets/icon/fat-icon.png"
+import calories from "../../../assets/icon/calories-icon.png"
+import proteines from "../../../assets/icon/protein-icon.png"
+import glucides from "../../../assets/icon/carbs-icon.png"
+import lipides from "../../../assets/icon/fat-icon.png"
 
 export default function Fuel({ data }) {
   const foodItems = [
