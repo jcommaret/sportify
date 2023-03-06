@@ -13,7 +13,7 @@ export default function TotalScore({ data }) {
       cy={circleSize / 2}
       innerRadius={100}
       outerRadius={120}
-      barSize={2}
+      barSize={10}
       data={progress}
       startAngle={90}
       endAngle={-270}
@@ -29,7 +29,7 @@ export default function TotalScore({ data }) {
         clockWise
         dataKey="value"
         cornerRadius={circleSize / 2}
-        fill="#82ca9d"
+        fill="#FF0101"
       />
       <text
         x={circleSize / 2}

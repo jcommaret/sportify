@@ -1,6 +1,6 @@
 import "./index.scss"
 import React, { useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { useEffect } from "react"
 import {
   getActivity,
@@ -19,6 +19,7 @@ import Fuel from "../../components/Fuel"
 
 export default function UserPage() {
   const { id } = useParams()
+  const navigate = useNavigate()
 
   const [firstName, setFirstName] = useState("")
   const [activity, setActivity] = useState([])
