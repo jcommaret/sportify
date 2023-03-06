@@ -2,6 +2,7 @@ import React from "react"
 import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts"
 
 export default function TotalScore({ data }) {
+  const progress = [{ value: data * 100 }]
   const circleSize = 250
 
   return (
@@ -13,7 +14,7 @@ export default function TotalScore({ data }) {
       innerRadius={100}
       outerRadius={120}
       barSize={10}
-      data={data}
+      data={progress}
       startAngle={90}
       endAngle={-270}
     >
@@ -26,7 +27,7 @@ export default function TotalScore({ data }) {
       <RadialBar
         background
         clockWise
-        dataKey={data.score * 100}
+        dataKey="value"
         cornerRadius={circleSize / 2}
         fill="#FF0101"
       />
@@ -37,7 +38,7 @@ export default function TotalScore({ data }) {
         dominantBaseline="middle"
         className="progress-label"
       >
-        {data.score * 100} % de votre objectif
+        {data * 100}%
       </text>
     </RadialBarChart>
   )

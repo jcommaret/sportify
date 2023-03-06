@@ -11,20 +11,19 @@ import {
 } from "../../services/services"
 import { getSessions } from "../../services/services"
 
-import DailyActivity from "../../components/DailyActivity"
-import SessionsAvg from "../../components/SessionsAvg"
-import ActivityWork from "../../components/ActivityWork"
-import TotalScore from "../../components/TotalScore"
-import Fuel from "../../components/Fuel"
+import DailyActivity from "../../components/Graphiques/DailyActivity"
+import SessionsAvg from "../../components/Graphiques/SessionsAvg"
+import ActivityWork from "../../components/Graphiques/ActivityWork"
+import TotalScore from "../../components/Graphiques/TotalScore"
+import Fuel from "../../components/Graphiques/Fuel"
 
 export default function UserPage() {
   const { id } = useParams()
-
   const [firstName, setFirstName] = useState("")
   const [activity, setActivity] = useState([])
   const [sessions, setSessions] = useState([])
   const [performance, setPerformance] = useState([])
-  const [valeur, setValeur] = useState("")
+  const [score, setScore] = useState("")
   const [keyFigures, setKeyFigures] = useState([])
 
   useEffect(() => {
@@ -32,7 +31,7 @@ export default function UserPage() {
     getActivity(id).then((activity) => setActivity(activity))
     getSessions(id).then((sessions) => setSessions(sessions))
     getPerformance(id).then((performance) => setPerformance(performance))
-    getObjectifs(id).then((valeur) => setValeur(valeur))
+    getObjectifs(id).then((score) => setScore(score))
     getKeyFigures(id).then((keyFigures) => setKeyFigures(keyFigures))
   }, [id])
 
@@ -68,7 +67,7 @@ export default function UserPage() {
 
           <section className="score">
             <h2 className="score-title">Score</h2>
-            <TotalScore data={valeur}></TotalScore>
+            <TotalScore data={score}></TotalScore>
           </section>
         </div>
       </div>
