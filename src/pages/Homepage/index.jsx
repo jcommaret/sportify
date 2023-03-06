@@ -1,6 +1,14 @@
+import "./index.scss"
 import React from "react"
 import { Link } from "react-router-dom"
 
 export default function Homepage() {
-  return <Link to="profile/0">Profile 0</Link>
+  return (
+    <>
+      <ul className="userchoice">
+        <Link to="profile/18">Profile 18</Link>
+        <Link to="profile/12">Profile 12</Link>
+      </ul>
+    </>
+  )
 }

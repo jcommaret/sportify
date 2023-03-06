@@ -30,9 +30,13 @@ export function getPerformance(id) {
 
 export function getObjectifs(id) {
   return getData(id).then(function (data) {
-    const userScore = data.data.score
-    console.log(" UserScore :", userScore)
-    return userScore
+    if (data.data.score !== undefined) {
+      const userScore = data.data.score
+      return userScore
+    } else if (data.data.todayScore !== undefined) {
+      const userScore = data.data.todayScore
+      return userScore
+    }
   })
 }
 
