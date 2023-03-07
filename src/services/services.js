@@ -8,22 +8,38 @@ export function getUser(id) {
 }
 
 export function getSessions(id) {
+  const jourLetter = ["L", "M", "M", "J", "V", "S", "D"]
   return getData(id, "average-sessions").then(function (data) {
-    const userSessions = data.data.sessions
+    const userSessions = data.data.sessions.map((item, index) => {
+      return { ...item, jourLetter: jourLetter[index] }
+    })
     return userSessions
   })
 }
 
 export function getActivity(id) {
   return getData(id, "activity").then(function (data) {
-    const userActivity = data.data.sessions
+    const userActivity = data.data.sessions.map((item) => {
+      return { ...item, jourNumber: new Date(item.day).getDate() }
+    })
     return userActivity
   })
 }
 
 export function getPerformance(id) {
+  const userPerformanceKind = [
+    "Cardio",
+    "Energie",
+    "Endurance",
+    "Force",
+    "Vitesse",
+    "Intensité",
+  ]
+
   return getData(id, "performance").then(function (data) {
-    const userPerformance = data.data.data
+    const userPerformance = data.data.data.map((item, index) => {
+      return { ...item, kindActivity: userPerformanceKind[index] }
+    })
     return userPerformance
   })
 }
@@ -37,7 +53,6 @@ export function getObjectifs(id) {
       const userScore = data.data.todayScore
       return userScore
     }
-    
   })
 }
 

@@ -23,7 +23,7 @@ export default function DailyActivity({ data }) {
         <Tooltip dataKey="calories" />
         <Bar barSize={7} dataKey="calories" fill="#282D30" />
         <Bar barSize={7} dataKey="kilogram" fill="#E60000" />
-        <XAxis dataKey="day" />
+        <XAxis dataKey="jourNumber" />
         <YAxis dataKey="kilogram" orientation="right" />
       </BarChart>
     </ResponsiveContainer>

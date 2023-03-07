@@ -9,9 +9,10 @@ export default function ActivityWork({ data }) {
       width={270}
       height={270}
       data={data}
+      angle={45}
     >
-      <PolarGrid />
-      <PolarAngleAxis dataKey="kind" stroke="#FFFFFF" />
+      <PolarGrid gridType="polygon" radialLines={false} />
+      <PolarAngleAxis dataKey="kindActivity" stroke="#FFFFFF" />
       <Radar
         name="Mike"
         dataKey="value"

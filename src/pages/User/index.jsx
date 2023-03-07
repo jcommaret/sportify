@@ -31,6 +31,7 @@ export default function UserPage() {
     getActivity(id).then((activity) => setActivity(activity))
     getSessions(id).then((sessions) => setSessions(sessions))
     getPerformance(id).then((performance) => setPerformance(performance))
+    console.log(getPerformance(id))
     getObjectifs(id).then((score) => setScore(score))
     getKeyFigures(id).then((keyFigures) => setKeyFigures(keyFigures))
   }, [id])
