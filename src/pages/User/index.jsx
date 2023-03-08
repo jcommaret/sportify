@@ -1,21 +1,37 @@
+/* import scss file */
 import "./index.scss"
-import React, { useState } from "react"
+
+/* import react  */
+import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { useEffect } from "react"
+
+/* import services */
 import {
   getActivity,
   getObjectifs,
   getPerformance,
   getUser,
   getKeyFigures,
+  getSessions,
 } from "../../services/services"
-import { getSessions } from "../../services/services"
 
+/* import components */
 import DailyActivity from "../../components/Graphiques/DailyActivity"
 import SessionsAvg from "../../components/Graphiques/SessionsAvg"
 import ActivityWork from "../../components/Graphiques/ActivityWork"
 import TotalScore from "../../components/Graphiques/TotalScore"
 import Fuel from "../../components/Graphiques/Fuel"
+
+/** 
+ * This function is defining userpage
+ * it use id as parameter to get data from api
+ 
+* Then it use useState to set data in the state
+ * firstName, activity, sessions, performance, score, keyFigures
+ * 
+ * Then it use useEffect to get data from api and set it in the state and render it
+ * 
+*/
 
 export default function UserPage() {
   const { id } = useParams()
@@ -31,7 +47,6 @@ export default function UserPage() {
     getActivity(id).then((activity) => setActivity(activity))
     getSessions(id).then((sessions) => setSessions(sessions))
     getPerformance(id).then((performance) => setPerformance(performance))
-    console.log(getPerformance(id))
     getObjectifs(id).then((score) => setScore(score))
     getKeyFigures(id).then((keyFigures) => setKeyFigures(keyFigures))
   }, [id])
