@@ -1,12 +1,12 @@
-/** This file is used to define all the services that will be used in the application**/
+/** This file is used to define all services that will be used in the application**/
 
-/** API_URL LOCALHOST, chande this when in production */
+/** API_URL LOCALHOST, change this when in production */
 const API_URL = "http://localhost:3000/user"
 
 /**
- * This function is used to get data from the API
- * @param {*} id from useParam
+ * This function to create a fetch request to the API and return the data in json format
  * @param {string} API_URL api public url
+ * @param {number} id from useParam
  * @param {string} url service defined routes
  * @returns data from API
  */
