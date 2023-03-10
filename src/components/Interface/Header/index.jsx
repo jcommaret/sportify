@@ -8,10 +8,8 @@ import navItems from "./pages"
 
 /**
  * Header component
- * This component is the header of the website
- * It contains the logo and the navigation links
- * It is used in the Layout component
- * @component
+ * @component Header is in charge of displaying the header of the website
+ * @exports Header
  */
 
 export default function Header() {
@@ -22,7 +20,6 @@ export default function Header() {
     path: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
   }
-
   return (
     <header className="header">
       <Link to="/">
