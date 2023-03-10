@@ -1,6 +1,7 @@
 import React from "react"
 import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts"
 
+//* Totalscore component
 export default function TotalScore({ data }) {
   const progress = [{ value: data * 100 }]
   const circleSize = 250

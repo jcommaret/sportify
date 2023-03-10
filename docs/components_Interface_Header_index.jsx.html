@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: services/index.js</title>
+    <title>JSDoc: Source: components/Interface/Header/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: services/index.js</h1>
+    <h1 class="page-title">Source: components/Interface/Header/index.jsx</h1>
 
     
 
@@ -26,29 +26,45 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/** This file is used to define all services
- ** that will be used in the application
- **/
+            <pre class="prettyprint source linenums"><code>import React from "react"
+import { Link } from "react-router-dom"
+import PropTypes from "prop-types"
+import "./index.scss"
 
-/** API_URL LOCALHOST, change this when in production */
-const API_URL = "http://localhost:3000/user"
+import logo from "../../../assets/logo.png"
+import navItems from "./pages"
 
 /**
- * This function to create a fetch request to the API and return the data in json format
- * @param {number} id from useParam
- * @param {string} API_URL api public url
- * @param {string} url service defined routes
- * @returns data from API
+ * Header component
+ * This component is the header of the website
+ * It contains the logo and the navigation links
+ * It is used in the Layout component
+ * @component
  */
 
-export function getData(id, url) {
-  if (url) {
-    return fetch(`${API_URL}/${id}/${url}`).then(
-      async (res) => await res.json()
-    )
-  } else {
-    return fetch(`${API_URL}/${id}`).then(async (res) => await res.json())
+export default function Header() {
+  Header.propTypes = {
+    logo: PropTypes.string.isRequired,
+    navItems: PropTypes.array.isRequired,
+    nav: PropTypes.object.isRequired,
+    path: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
   }
+
+  return (
+    &lt;header className="header">
+      &lt;Link to="/">
+        &lt;img className="logo" src={logo} alt="logo" />
+      &lt;/Link>
+      &lt;ul>
+        {navItems.map((nav, index) => (
+          &lt;li key={index}>
+            &lt;Link to={nav.path}>{nav.name}&lt;/Link>
+          &lt;/li>
+        ))}
+      &lt;/ul>
+    &lt;/header>
+  )
 }
 </code></pre>
         </article>
