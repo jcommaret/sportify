@@ -5,7 +5,7 @@ import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts"
  * TotalScore component
  * @component TotalScore
  * @param {Props}  data
- * @param {Number} value number used for totalscore calculation : 100% = 1 
+ * @param {Number} data.value number used for totalscore calculation : 100% = 1 
  * @exports TotalScore
  */
 

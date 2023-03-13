@@ -1,6 +1,10 @@
 import { LineChart, Line, YAxis, XAxis, Tooltip } from "recharts"
 
 //* SessionsAvg component
+
+
+
+
 export default function SessionsAvg({ data }) {
   return (
     <LineChart width={320} height={140} data={data}>

@@ -7,11 +7,10 @@ import lipides from "../../../assets/icon/fat-icon.png"
  * Fuel component
  * @component Fuel is in charge of displaying calories, proteins, carbohydrates and lipids information in the dashboard
  * @param {Props}  data
- * @param {Object} data.data
- * @param {Number} data.data.calorieCount Calories Amount
- * @param {Number} data.data.proteinCount Proteins Amount
- * @param {Number} data.data.carbohydrateCount Carbohydrathe Amount
- * @param {Number} data.data.lipidCount Lipide Amount
+ * @param {Number} data.calorieCount Calories Amount
+ * @param {Number} data.proteinCount Proteins Amount
+ * @param {Number} data.carbohydrateCount Carbohydrathe Amount
+ * @param {Number} data.lipidCount Lipide Amount
  * @exports Fuel
  */
 export default function Fuel({ data }) {
