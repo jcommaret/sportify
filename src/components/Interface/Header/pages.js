@@ -1,7 +1,7 @@
 const navItems = [
   { name: "Accueil", path: "/" },
   { name: "Profil", path: "/" },
-  { name: "Réglages", path: "/Reglages" },
-  { name: "Communauté", path: "/communauté" },
+  { name: "Réglages", path: "/" },
+  { name: "Communauté", path: "/" },
 ]
 export default navItems
