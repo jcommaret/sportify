@@ -56,23 +56,34 @@ export function getActivity(id) {
  * @param {array} userPerformanceKind using index correspondance to get the kind of activity related to the data corresponding index
  * @returns userPergormance
  */
-export function getPerformance(id) {
-  const userPerformanceKind = [
-    "Cardio",
-    "Energie",
-    "Endurance",
-    "Force",
-    "Vitesse",
-    "Intensité",
-  ]
 
+
+export function getPerformance(id) {
   return getData(id, "performance").then(function (data) {
-    const userPerformance = data.data.data.map((item, index) => {
-      return { ...item, kindActivity: userPerformanceKind[index] }
+    const userPerformance = data.data.data.map((item) => {
+      return { ...item, kindActivity: getKind(data.data.kind[item.kind]) }
     })
     return userPerformance
   })
 }
+
+function getKind(kind) {
+  switch (kind) {
+    case "cardio":
+      return "Cardio"
+    case "energy":
+      return "Energie"
+    case "endurance":
+      return "Endurance"
+    case "strength":
+      return "Force"
+    case "speed":
+      return "Vitesse"
+    case "intensity":
+      return "Intensité"
+    default:
+  }
+} 
 
 /**
  * Function to get Objectif data from API

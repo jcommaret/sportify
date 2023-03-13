@@ -9,10 +9,7 @@ import navItems from "./pages"
  * Header component
  * @component Header is in charge of displaying the header of the website
  * @param {string} logo logo of the website
- * @param {array} navItems array of nav objects
- * @param {object} nav grouping path of the page, and name of page
- * @param {string} path page path
- * @param {string} name name of the page
+ * @param {Array.<{path: string, name: string}>} navItems items of the navigation bar
  * @exports Header
  */
 

@@ -1,11 +1,9 @@
 import { Routes, Route } from "react-router-dom"
 
 import Layout from "../pages/Layout"
-import UserPage from "../pages/User"
-import Settings from "../pages/Settings"
-import Community from "../pages/Community"
-import NotFound from "../pages/NotFound"
 import Homepage from "../pages/Homepage"
+import UserPage from "../pages/User"
+import NotFound from "../pages/NotFound"
 
 export default function Routers() {
   return (
@@ -13,9 +11,9 @@ export default function Routers() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Homepage />} />
         <Route index path="profile/:id" element={<UserPage />} />
-        <Route path="settings" element={<Settings />} />
-        <Route path="community" element={<Community />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="404" element={<NotFound />} />
+        <Route path="error" element={<NotFound />} />
       </Route>
     </Routes>
   )
