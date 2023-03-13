@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Interface/Header/index.jsx</title>
+    <title>JSDoc: Source: components/Graphiques/DailyActivity/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Interface/Header/index.jsx</h1>
+    <h1 class="page-title">Source: components/Graphiques/DailyActivity/index.jsx</h1>
 
     
 
@@ -26,38 +26,53 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React from "react"
-import { Link } from "react-router-dom"
-import "./index.scss"
-
-import logo from "../../../assets/logo.png"
-import navItems from "./pages"
-
+            <pre class="prettyprint source linenums"><code>import {
+  ResponsiveContainer,
+  BarChart,
+  Legend,
+  Bar,
+  YAxis,
+  XAxis,
+  Tooltip,
+  CartesianGrid,
+} from "recharts"
 /**
- * Header component
- * @component Header is in charge of displaying the header of the website
- * @param {string} logo logo of the website
- * @param {array} navItems array of nav objects
- * @param {object} nav grouping path of the page, and name of page
- * @param {string} path page path
- * @param {string} name name of the page
- * @exports Header
+ * Daily activity component
+ * @component DailyActivity is in charge of displaying calories, proteins, carbohydrates and lipids information in the dashboard
+ * @param {Props}  data
+ * @param {Object} data.data
+ * @param {Number} data.data.calories Calories Amount
+ * @param {Number} data.data.kilograms kilograms Amount
+ * @exports DailyActivity
  */
-
-export default function Header() {
+export default function DailyActivity({ data }) {
   return (
-    &lt;header className="header">
-      &lt;Link to="/">
-        &lt;img className="logo" src={logo} alt="logo" />
-      &lt;/Link>
-      &lt;ul>
-        {navItems.map((nav, index) => (
-          &lt;li key={index}>
-            &lt;Link to={nav.path}>{nav.name}&lt;/Link>
-          &lt;/li>
-        ))}
-      &lt;/ul>
-    &lt;/header>
+    &lt;ResponsiveContainer width="100%" height={200}>
+      &lt;BarChart width={760} height={100} data={data}>
+        &lt;Legend
+          layout="horizontal"
+          verticalAlign="top"
+          align="center"
+          wrapperStyle={{ top: -45 }}
+        />
+        &lt;CartesianGrid strokeDasharray="1" vertical={false} />
+        &lt;Tooltip dataKey="calories" />
+        &lt;Bar
+          barSize={7}
+          dataKey="calories"
+          fill="#282D30"
+          radius={[5, 5, 0, 0]}
+        />
+        &lt;Bar
+          barSize={7}
+          dataKey="kilogram"
+          fill="#E60000"
+          radius={[5, 5, 0, 0]}
+        />
+        &lt;XAxis dataKey="jourNumber" />
+        &lt;YAxis dataKey="kilogram" orientation="right" />
+      &lt;/BarChart>
+    &lt;/ResponsiveContainer>
   )
 }
 </code></pre>
