@@ -10,6 +10,7 @@ import navItems from "./pages"
  * @component Header is in charge of displaying the header of the website
  * @param {string} logo logo of the website
  * @param {Array.<{path: string, name: string}>} navItems items of the navigation bar
+ * @returns {JSX.Element} Header component
  * @exports Header
  */
 

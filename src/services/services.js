@@ -32,6 +32,8 @@ export function getSessions(id) {
 }
 
 
+
+
 /**
 * Function to get Activity data from API
 * @param {number} id 
@@ -53,10 +55,9 @@ export function getActivity(id) {
  * Function to get Performance data from API
  * @param {number} id 
  * @param {string} url
- * @param {array} userPerformanceKind using index correspondance to get the kind of activity related to the data corresponding index
+ * @param {array} kindActivity using item.kind correspondance to get the kind of activity related to the data corresponding index
  * @returns userPergormance
  */
-
 
 export function getPerformance(id) {
   return getData(id, "performance").then(function (data) {

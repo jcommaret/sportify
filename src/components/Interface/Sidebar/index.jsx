@@ -6,11 +6,9 @@ import "./index.scss"
 /**
  * Sidebar component
  * @component Sidebar is in charge of displaying the sidebar of the website
- * @param {array} sidebarItems array of icon objects
- * @param {props} icon
- * @param {string} path
- * @param {string} img
- * @param {string} desc
+ * @param {array} sidebarItems array of icon array 
+ * @param {Array.<{img: string, path: string, desc:string}>} Icon array of icon
+ * @returns {JSX.Element} Sidebar component
  * @exports Sidebar
  */
 

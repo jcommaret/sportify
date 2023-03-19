@@ -14,6 +14,7 @@ import {
  * @param {Props}  data
  * @param {Number} data.calories Calories Amount
  * @param {Number} data.kilograms kilograms Amount
+ * @returns {JSX.Element} DailyActivity component
  * @exports DailyActivity
  */
 export default function DailyActivity({ data }) {
