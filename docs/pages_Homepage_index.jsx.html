@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Interface/Sidebar/index.jsx</title>
+    <title>JSDoc: Source: pages/Homepage/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Interface/Sidebar/index.jsx</h1>
+    <h1 class="page-title">Source: pages/Homepage/index.jsx</h1>
 
     
 
@@ -26,34 +26,23 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React from "react"
+            <pre class="prettyprint source linenums"><code>import "./index.scss"
+import React from "react"
 import { Link } from "react-router-dom"
-import sidebarItems from "./pages"
-import "./index.scss"
-
 /**
- * Sidebar component
- * @component Sidebar is in charge of displaying the sidebar of the website
- * @param {array} sidebarItems array of icon array 
- * @param {Array.&lt;{img: string, path: string, desc:string}>} Icon array of icon
- * @returns {JSX.Element} Sidebar component
- * @exports Sidebar
+ * Homepage component is in charge of displaying the homepage of the application displaying the 2 profiles available
+ * @component Homepage component 
+ * @returns {JSX.Element} Homepage component
+ * @exports Homepage
  */
-
-export default function Sidebar() {
+export default function Homepage() {
   return (
-    &lt;aside className="sidebar">
-      &lt;ul>
-        {sidebarItems.map((icon, index) => (
-          &lt;li key={index}>
-            &lt;Link to={icon.path}>
-              &lt;img src={icon.img} alt={icon.desc} />
-            &lt;/Link>
-          &lt;/li>
-        ))}
+    &lt;>
+      &lt;ul className="userchoice">
+        &lt;Link to="profile/12">Profile 12&lt;/Link>
+        &lt;Link to="profile/18">Profile 18&lt;/Link>
       &lt;/ul>
-      &lt;p className="footer">Copyright, SportSee 2020&lt;/p>
-    &lt;/aside>
+    &lt;/>
   )
 }
 </code></pre>

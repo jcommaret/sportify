@@ -9,8 +9,8 @@ import {
   CartesianGrid,
 } from "recharts"
 /**
- * Daily activity component
- * @component DailyActivity is in charge of displaying calories, and kilograms at the top left section of the dashboard
+ * DailyActivity Component is in charge of displaying the bar chart of the activity of the user 
+ * @component DailyActivity component
  * @param {Props}  data
  * @param {Number} data.calories Calories Amount
  * @param {Number} data.kilograms kilograms Amount

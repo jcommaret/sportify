@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Interface/Sidebar/index.jsx</title>
+    <title>JSDoc: Source: pages/Layout/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Interface/Sidebar/index.jsx</h1>
+    <h1 class="page-title">Source: pages/Layout/index.jsx</h1>
 
     
 
@@ -26,34 +26,27 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React from "react"
-import { Link } from "react-router-dom"
-import sidebarItems from "./pages"
+            <pre class="prettyprint source linenums"><code>import { Outlet } from "react-router-dom"
+
+import Header from "../../components/Interface/Header"
+import Sidebar from "../../components/Interface/Sidebar"
+
 import "./index.scss"
-
 /**
- * Sidebar component
- * @component Sidebar is in charge of displaying the sidebar of the website
- * @param {array} sidebarItems array of icon array 
- * @param {Array.&lt;{img: string, path: string, desc:string}>} Icon array of icon
- * @returns {JSX.Element} Sidebar component
- * @exports Sidebar
+ * Layout component is in charge of displaying the layout of the website : header, sidebar and main Outlet
+ * @component Layout component
+ * @returns {JSX.Element} Layout component
+ * @exports Layout component
  */
-
-export default function Sidebar() {
+export default function Layout() {
   return (
-    &lt;aside className="sidebar">
-      &lt;ul>
-        {sidebarItems.map((icon, index) => (
-          &lt;li key={index}>
-            &lt;Link to={icon.path}>
-              &lt;img src={icon.img} alt={icon.desc} />
-            &lt;/Link>
-          &lt;/li>
-        ))}
-      &lt;/ul>
-      &lt;p className="footer">Copyright, SportSee 2020&lt;/p>
-    &lt;/aside>
+    &lt;>
+      &lt;Header />
+      &lt;Sidebar />
+      &lt;main className="main-container">
+        &lt;Outlet />
+      &lt;/main>
+    &lt;/>
   )
 }
 </code></pre>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Interface/Sidebar/index.jsx</title>
+    <title>JSDoc: Source: components/Graphiques/ActivityWork/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Interface/Sidebar/index.jsx</h1>
+    <h1 class="page-title">Source: components/Graphiques/ActivityWork/index.jsx</h1>
 
     
 
@@ -26,34 +26,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React from "react"
-import { Link } from "react-router-dom"
-import sidebarItems from "./pages"
-import "./index.scss"
+            <pre class="prettyprint source linenums"><code>import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts"
 
 /**
- * Sidebar component
- * @component Sidebar is in charge of displaying the sidebar of the website
- * @param {array} sidebarItems array of icon array 
- * @param {Array.&lt;{img: string, path: string, desc:string}>} Icon array of icon
- * @returns {JSX.Element} Sidebar component
- * @exports Sidebar
+ * Activity Work Component is in charge of displaying the radar chart of the activity of the user
+ * @component Activity Work component  
+ * @param {Props}  data
+ * @param {Array}  data.kindActivity fullfilling the dataKey kindActivity of the PolarAngleAxis
+ * @param {Number} data.value fullfilling the dataKey value of the Radar
+ * @returns {JSX.Element} DailyActivity component
+ * @exports ActivityWork component
  */
 
-export default function Sidebar() {
+export default function ActivityWork({ data }) {
   return (
-    &lt;aside className="sidebar">
-      &lt;ul>
-        {sidebarItems.map((icon, index) => (
-          &lt;li key={index}>
-            &lt;Link to={icon.path}>
-              &lt;img src={icon.img} alt={icon.desc} />
-            &lt;/Link>
-          &lt;/li>
-        ))}
-      &lt;/ul>
-      &lt;p className="footer">Copyright, SportSee 2020&lt;/p>
-    &lt;/aside>
+    &lt;RadarChart
+      cx={135}
+      cy={130}
+      outerRadius={90}
+      width={270}
+      height={270}
+      data={data}
+      angle={45}
+    >
+      &lt;PolarGrid gridType="polygon" radialLines={false} />
+      &lt;PolarAngleAxis dataKey="kindActivity" stroke="#FFFFFF" />
+      &lt;Radar
+        name="Mike"
+        dataKey="value"
+        stroke="#FF0101"
+        fill="#FF0101"
+        fillOpacity={0.7}
+      />
+    &lt;/RadarChart>
   )
 }
 </code></pre>

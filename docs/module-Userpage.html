@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: DailyActivity</title>
+    <title>JSDoc: Class: Userpage</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: DailyActivity</h1>
+    <h1 class="page-title">Class: Userpage</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>DailyActivity<span class="signature">(data)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Userpage<span class="signature">(firstName, activity, sessions, performance, score, keyFigures)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h2>
         
     
 </header>
@@ -41,7 +41,7 @@
     
 
     
-    <h4 class="name" id="DailyActivity"><span class="type-signature"></span>new DailyActivity<span class="signature">(data)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="Userpage"><span class="type-signature"></span>new Userpage<span class="signature">(firstName, activity, sessions, performance, score, keyFigures)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -49,7 +49,7 @@
 
 
 <div class="description">
-    <p>DailyActivity Component is in charge of displaying the bar chart of the activity of the user</p>
+    <p>Userpage component is in charge of displaying the user page fullfilled with the data of the user</p>
 </div>
 
 
@@ -85,7 +85,30 @@
 
         <tr>
             
-                <td class="name"><code>data</code></td>
+                <td class="name"><code>firstName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>firstName of the user</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>activity</code></td>
             
 
             <td class="type">
@@ -101,62 +124,20 @@
 
             
 
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>calories</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Calories Amount</p></td>
+            <td class="description last"><p>props of DailyActivity component</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>kilograms</code></td>
+                <td class="name"><code>sessions</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">Props</span>
 
 
             
@@ -166,14 +147,76 @@
 
             
 
-            <td class="description last"><p>kilograms Amount</p></td>
+            <td class="description last"><p>props of SessionsAvg component</p></td>
         </tr>
 
     
-    </tbody>
-</table>
 
+        <tr>
+            
+                <td class="name"><code>performance</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Props</span>
+
+
+            
             </td>
+
+            
+
+            
+
+            <td class="description last"><p>props of ActivityWork component</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>score</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Props</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>props of TotalScore component</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>keyFigures</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Props</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>props of Fuel component</p></td>
         </tr>
 
     
@@ -214,7 +257,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_Graphiques_DailyActivity_index.jsx.html">components/Graphiques/DailyActivity/index.jsx</a>, <a href="components_Graphiques_DailyActivity_index.jsx.html#line20">line 20</a>
+        <a href="pages_User_index.jsx.html">pages/User/index.jsx</a>, <a href="pages_User_index.jsx.html#line38">line 38</a>
     </li></ul></dd>
     
 
@@ -243,7 +286,7 @@
 
         
 <div class="param-desc">
-    <p>DailyActivity component</p>
+    <p>Userpage component</p>
 </div>
 
 

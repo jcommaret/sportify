@@ -1,6 +1,14 @@
 import { LineChart, Line, YAxis, XAxis } from "recharts"
 
-//* SessionsAvg component
+/**
+ * SessionsAvg Component is in charge of displaying the line chart of the sessions of the user
+ * @component SessionsAvg component
+ * @param {Props}  data
+ * @param {Number} data.jourLetter fullfilling the dataKey jourLetter of the XAxis 
+ * @param {Number} data.sessionLength fullfilling the dataKey sessionLength of the Line
+ * @returns {JSX.Element} Fuel component
+ * @exports SessionsAvg component
+ */
 
 export default function SessionsAvg({ data }) {
   return (

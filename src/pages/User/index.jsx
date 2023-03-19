@@ -22,16 +22,18 @@ import ActivityWork from "../../components/Graphiques/ActivityWork"
 import TotalScore from "../../components/Graphiques/TotalScore"
 import Fuel from "../../components/Graphiques/Fuel"
 
-/** 
- * This function is defining userpage
- * it use id as parameter to get data from api
- 
-* Then it use useState to set data in the state
- * firstName, activity, sessions, performance, score, keyFigures
- * 
- * Then it use useEffect to get data from api and set it in the state and render it
- * 
-*/
+/**
+ * Userpage component is in charge of displaying the user page fullfilled with the data of the user
+ * @component Userpage component
+ * @param {String} firstName firstName of the user
+ * @param {Props} activity props of DailyActivity component
+ * @param {Props} sessions props of SessionsAvg component
+ * @param {Props} performance props of ActivityWork component
+ * @param {Props} score props of TotalScore component
+ * @param {Props} keyFigures props of Fuel component
+ * @returns {JSX.Element} Userpage component
+ * @exports Userpage component
+ */
 
 export default function UserPage() {
   const { id } = useParams()

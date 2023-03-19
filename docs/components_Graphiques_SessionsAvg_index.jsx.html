@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Interface/Sidebar/index.jsx</title>
+    <title>JSDoc: Source: components/Graphiques/SessionsAvg/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Interface/Sidebar/index.jsx</h1>
+    <h1 class="page-title">Source: components/Graphiques/SessionsAvg/index.jsx</h1>
 
     
 
@@ -26,34 +26,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React from "react"
-import { Link } from "react-router-dom"
-import sidebarItems from "./pages"
-import "./index.scss"
+            <pre class="prettyprint source linenums"><code>import { LineChart, Line, YAxis, XAxis } from "recharts"
 
 /**
- * Sidebar component
- * @component Sidebar is in charge of displaying the sidebar of the website
- * @param {array} sidebarItems array of icon array 
- * @param {Array.&lt;{img: string, path: string, desc:string}>} Icon array of icon
- * @returns {JSX.Element} Sidebar component
- * @exports Sidebar
+ * SessionsAvg Component is in charge of displaying the line chart of the sessions of the user
+ * @component SessionsAvg component
+ * @param {Props}  data
+ * @param {Number} data.jourLetter fullfilling the dataKey jourLetter of the XAxis 
+ * @param {Number} data.sessionLength fullfilling the dataKey sessionLength of the Line
+ * @returns {JSX.Element} Fuel component
+ * @exports SessionsAvg component
  */
 
-export default function Sidebar() {
+export default function SessionsAvg({ data }) {
   return (
-    &lt;aside className="sidebar">
-      &lt;ul>
-        {sidebarItems.map((icon, index) => (
-          &lt;li key={index}>
-            &lt;Link to={icon.path}>
-              &lt;img src={icon.img} alt={icon.desc} />
-            &lt;/Link>
-          &lt;/li>
-        ))}
-      &lt;/ul>
-      &lt;p className="footer">Copyright, SportSee 2020&lt;/p>
-    &lt;/aside>
+    &lt;LineChart width={320} height={140} data={data}>
+      &lt;XAxis dataKey="jourLetter" stroke="#FFFFFF" />
+      &lt;YAxis axisLine={false} tick={false} />
+
+      &lt;Line
+        type="monotone"
+        dataKey="sessionLength"
+        stroke="#FFFFFF"
+        activeDot={{ r: 8 }}
+      />
+    &lt;/LineChart>
   )
 }
 </code></pre>
