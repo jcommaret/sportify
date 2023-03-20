@@ -40,6 +40,7 @@ export default function DailyActivity({ data }) {
           barSize={7}
           dataKey="Calories"
           name="Calories brûlées (kCal)"
+          shortName="kCal"
           fill="#282D30"
           radius={[5, 5, 0, 0]}
           yAxisId="Calories"
@@ -48,6 +49,7 @@ export default function DailyActivity({ data }) {
         <Bar
           barSize={7}
           dataKey="Kilograms"
+          shortName="kg"
           name="Poids (kg)"
           color="#74798C"
           fill="#E60000"
