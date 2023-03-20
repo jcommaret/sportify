@@ -46,7 +46,7 @@ export default function TotalScore({ data }) {
         dominantBaseline="middle"
         className="progress-label"
       >
-        {data * 100}%
+        {data * 100}% de votre objectif
       </text>
     </RadialBarChart>
   )

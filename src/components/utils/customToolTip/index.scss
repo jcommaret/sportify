@@ -4,4 +4,13 @@
   border:0px;
   background-color: #FF0000;
   color:#FFF;
+  .tp{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    .val{
+      padding:10px;
+    }
+  }
+
 }

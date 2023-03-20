@@ -7,8 +7,8 @@ export const CustomTooltip = ({ active, payload }) => {
       <div className="custom-tooltip">
         <div>
           <div className="tp">
-            <div>{Calories} kCal</div>
-            <div>{Kilograms} kg</div>
+            <div className="val">{Calories} kCal</div>
+            <div className="val">{Kilograms} kg</div>
           </div>
         </div>
       </div>
