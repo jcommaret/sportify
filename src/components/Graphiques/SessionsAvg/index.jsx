@@ -1,5 +1,5 @@
-import { LineChart, Line, YAxis, XAxis } from "recharts"
-
+import { LineChart, Line, YAxis, XAxis, Tooltip } from "recharts"
+import "./index.scss"
 /**
  * SessionsAvg Component is in charge of displaying the line chart of the sessions of the user
  * @component SessionsAvg component
@@ -13,15 +13,21 @@ import { LineChart, Line, YAxis, XAxis } from "recharts"
 export default function SessionsAvg({ data }) {
   return (
     <LineChart width={320} height={140} data={data}>
-      <XAxis dataKey="jourLetter" stroke="#FFFFFF" />
+      <XAxis
+        dataKey="jourLetter"
+        axisLine={false}
+        tickSize={0}
+        stroke="#FFFFFF"
+      />
       <YAxis className="YAxis" axisLine={false} tick={false} top={10} />
-
       <Line
         type="natural"
         dataKey="sessionLength"
         stroke="#FFFFFF"
-        activeDot={{ r: 8 }}
+        tick={false}
+        dot={false}
       />
+      <Tooltip />
     </LineChart>
   )
 }
