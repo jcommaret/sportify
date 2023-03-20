@@ -26,7 +26,7 @@ export default function DailyActivity({ data }) {
           layout="horizontal"
           verticalAlign="top"
           align="center"
-          wrapperStyle={{ top: -45 }}
+          wrapperStyle={{ top: -45, color: "#74798C" }}
           iconType="circle"
         />
         <CartesianGrid strokeDasharray="1" vertical={false} />
