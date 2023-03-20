@@ -1,8 +1,9 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts"
 
+import "./index.scss"
 /**
  * Activity Work Component is in charge of displaying the radar chart of the activity of the user
- * @component Activity Work component  
+ * @component Activity Work component
  * @param {Props}  data
  * @param {Array}  data.kindActivity fullfilling the dataKey kindActivity of the PolarAngleAxis
  * @param {Number} data.value fullfilling the dataKey value of the Radar
@@ -13,11 +14,11 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts"
 export default function ActivityWork({ data }) {
   return (
     <RadarChart
-      cx={135}
-      cy={130}
-      outerRadius={90}
-      width={270}
-      height={270}
+      cx={120}
+      cy={125}
+      outerRadius={70}
+      width={250}
+      height={250}
       data={data}
       angle={45}
     >

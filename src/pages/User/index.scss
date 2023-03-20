@@ -101,7 +101,7 @@
     display: flex;
     &-info{
       padding: 10px;
-      p:first-of-type{
+      .bold{
         font-weight: 700;
       }
     }

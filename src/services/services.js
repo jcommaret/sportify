@@ -31,9 +31,6 @@ export function getSessions(id) {
   })
 }
 
-
-
-
 /**
 * Function to get Activity data from API
 * @param {number} id 
@@ -45,7 +42,12 @@ export function getSessions(id) {
 export function getActivity(id) {
   return getData(id, "activity").then(function (data) {
     const userActivity = data.data.sessions.map((item) => {
-      return { ...item, jourNumber: new Date(item.day).getDate() }
+      return {
+        ...item,
+        jourNumber: new Date(item.day).getDate(),
+        Kilograms: item.kilogram,
+        Calories: item.calories,
+      }
     })
     return userActivity
   })

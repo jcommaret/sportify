@@ -8,8 +8,9 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts"
+import { CustomTooltip } from "../../utils/customToolTip"
 /**
- * DailyActivity Component is in charge of displaying the bar chart of the activity of the user 
+ * DailyActivity Component is in charge of displaying the bar chart of the activity of the user
  * @component DailyActivity component
  * @param {Props}  data
  * @param {Number} data.calories Calories Amount
@@ -19,8 +20,8 @@ import {
  */
 export default function DailyActivity({ data }) {
   return (
-    <ResponsiveContainer width="99%" height={200}>
-      <BarChart width={760} height={100} data={data}>
+    <ResponsiveContainer width="99%" height={250}>
+      <BarChart width={800} height={100} data={data}>
         <Legend
           layout="horizontal"
           verticalAlign="top"
@@ -29,32 +30,41 @@ export default function DailyActivity({ data }) {
           iconType="circle"
         />
         <CartesianGrid strokeDasharray="1" vertical={false} />
-        <Tooltip dataKey="calories" />
+
+        <Tooltip
+          content={<CustomTooltip />}
+          wrapperStyle={{ outline: "none" }}
+        />
+
         <Bar
           barSize={7}
-          dataKey="calories"
+          dataKey="Calories"
           fill="#282D30"
           radius={[5, 5, 0, 0]}
-          yAxisId="calories"
+          yAxisId="Calories"
         />
+
         <Bar
           barSize={7}
-          dataKey="kilogram"
+          dataKey="Kilograms"
           fill="#E60000"
           radius={[5, 5, 0, 0]}
-          yAxisId="kilogram"
+          yAxisId="Kilograms"
         />
+
         <XAxis dataKey="jourNumber" />
+
         <YAxis
-          yAxisId="calories"
-          dataKey="calories"
+          yAxisId="Calories"
+          dataKey="Calories"
           orientation="left"
           hide
           tickCount={3}
         />
+
         <YAxis
-          yAxisId="kilogram"
-          dataKey="kilogram"
+          yAxisId="Kilograms"
+          dataKey="Kilograms"
           orientation="right"
           tickCount={3}
         />
