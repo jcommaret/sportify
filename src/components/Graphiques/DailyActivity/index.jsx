@@ -25,7 +25,7 @@ export default function DailyActivity({ data }) {
         <Legend
           layout="horizontal"
           verticalAlign="top"
-          align="center"
+          align="right"
           wrapperStyle={{ top: -45, color: "#74798C" }}
           iconType="circle"
         />
@@ -39,6 +39,7 @@ export default function DailyActivity({ data }) {
         <Bar
           barSize={7}
           dataKey="Calories"
+          name="Calories brûlées (kCal)"
           fill="#282D30"
           radius={[5, 5, 0, 0]}
           yAxisId="Calories"
@@ -47,6 +48,8 @@ export default function DailyActivity({ data }) {
         <Bar
           barSize={7}
           dataKey="Kilograms"
+          name="Poids (kg)"
+          color="#74798C"
           fill="#E60000"
           radius={[5, 5, 0, 0]}
           yAxisId="Kilograms"
