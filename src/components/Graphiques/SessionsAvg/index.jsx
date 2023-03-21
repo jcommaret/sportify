@@ -1,5 +1,6 @@
 import { LineChart, Line, YAxis, XAxis, Tooltip } from "recharts"
 import "./index.scss"
+import { CustomTooltipWhite } from "../../utils/customToolTip"
 /**
  * SessionsAvg Component is in charge of displaying the line chart of the sessions of the user
  * @component SessionsAvg component
@@ -27,7 +28,11 @@ export default function SessionsAvg({ data }) {
         tick={false}
         dot={false}
       />
-      <Tooltip />
+      <Tooltip
+        cursor={false}
+        wrapperStyle={{ outline: "none" }}
+        content={<CustomTooltipWhite />}
+      />
     </LineChart>
   )
 }

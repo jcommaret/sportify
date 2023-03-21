@@ -1,9 +1,26 @@
-.custom-tooltip{
+.custom-tooltip-red{
   padding:10px;
   border-radius: 0px;
   border:0px;
   background-color: #FF0000;
   color:#FFF;
+  .tp{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    .val{
+      padding:10px;
+    }
+  }
+
+}
+
+.custom-tooltip-white{
+  padding:10px;
+  border-radius: 0px;
+  border:0px;
+  background-color: #FFF;
+  color:#FF0000;
   .tp{
     display:flex;
     flex-direction: column;

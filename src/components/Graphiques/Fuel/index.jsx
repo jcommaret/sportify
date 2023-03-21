@@ -44,7 +44,8 @@ export default function Fuel({ data }) {
             <img src={item.img} alt={item.type} />
             <div className="fuel-item-info">
               <p className="bold">
-                {item.ratio} {item.units}
+                {item.ratio}
+                {item.units}
               </p>
               <p>{item.type}</p>
             </div>

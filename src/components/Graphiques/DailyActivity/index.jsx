@@ -8,7 +8,7 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts"
-import { CustomTooltip } from "../../utils/customToolTip"
+import { CustomTooltipRed } from "../../utils/customToolTip"
 /**
  * DailyActivity Component is in charge of displaying the bar chart of the activity of the user
  * @component DailyActivity component
@@ -32,7 +32,7 @@ export default function DailyActivity({ data }) {
         <CartesianGrid strokeDasharray="1" vertical={false} />
 
         <Tooltip
-          content={<CustomTooltip />}
+          content={<CustomTooltipRed />}
           wrapperStyle={{ outline: "none" }}
         />
 
