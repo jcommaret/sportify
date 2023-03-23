@@ -1,6 +1,4 @@
-/** This file is used to define all services
- ** that will be used in the application
- **/
+/** This file is used to define getData function that will be used in the application **/
 
 /** API_URL LOCALHOST, change this when in production */
 const API_URL = "http://localhost:3000/user"
