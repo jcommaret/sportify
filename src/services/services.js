@@ -12,7 +12,6 @@ export function getUser(id) {
   })
 }
 
-
 /**
 * Function to get sessions data from API
 * @param {number} id 
@@ -60,7 +59,6 @@ export function getActivity(id) {
  * @param {array} kindActivity using item.kind correspondance to get the kind of activity related to the data corresponding index
  * @returns userPergormance
  */
-
 export function getPerformance(id) {
   return getData(id, "performance").then(function (data) {
     const userPerformance = data.data.data.map((item) => {
